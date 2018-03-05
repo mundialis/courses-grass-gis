@@ -1,0 +1,412 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2) GRASS GIS Software first steps · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="grassgis7_intro.html" />
+    
+    
+    <link rel="prev" href="Intro.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Starting Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Info.html">
+            
+                <a href="Info.html">
+            
+                    
+                    Information about the course
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Intro.html">
+            
+                <a href="Intro.html">
+            
+                    
+                    1) Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="Q_and_GRASS_GIS.html">
+            
+                <a href="Q_and_GRASS_GIS.html">
+            
+                    
+                    2) GRASS GIS Software first steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="grassgis7_intro.html">
+            
+                <a href="grassgis7_intro.html">
+            
+                    
+                    3) GRASS GIS 7 intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >2) GRASS GIS Software first steps</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="intro-qgis-processing-grass-gis">Intro QGIS-Processing-GRASS GIS</h1>
+<p><img style="float: right;" src="image/grass_symbol.png" width="100">
+<img src="image/osgeolive.png" width="300"></p>
+<hr>
+<h3 id="session-objectives">Session Objectives</h3>
+<ul>
+<li>Starting OSGeo-Live<ul>
+<li>... of GRASS GIS 7</li>
+<li>&#x2026; of QGIS</li>
+</ul>
+</li>
+<li>Download of related course data</li>
+<li>Using GRASS GIS in QGIS through &#x201C;Processing&#x201D;</li>
+</ul>
+<hr>
+<h2 id="preparation">Preparation</h2>
+<h4 id="starting-osgeolive">Starting OSGeoLive</h4>
+<p><a href="http://download.osgeo.org/livedvd" target="_blank">OSGeo-Live</a> ISO available</p>
+<p>Copy to DVD or USB flash drive, then boot from flash drive;
+or run it in a Virtual Machine environment.</p>
+<p>See: <a href="https://live.osgeo.org/en/quickstart/osgeolive_quickstart.html" target="_blank">quickstart</a></p>
+<p>...sit back while the system boots up...
+<img src="image/osgeo_ss.png" width="500"></p>
+<p><strong>Optional</strong>: Configuration of region settings:
+OSGeo-Live <a href="https://live.osgeo.org/en/quickstart/internationalisation_quickstart.html" target="_blank">Internationalisation Quickstart</a></p>
+<p>Keyboard layout switcher:
+To add a &#x201C;flag&#x201D; icon to the lower menu panel, do the following steps:
+<img src="image/osgeotodo.png"></p>
+<p><strong>Optional</strong>: Configuration of <strong>keyboard layout</strong>
+<img src="image/osgeotodo2.png"></p>
+<hr>
+<p>Configuration of region settings if needed:
+OSGeo-Live <a href="https://live.osgeo.org/en/quickstart/internationalisation_quickstart.html" target="_blank">Internationalisation Quickstart</a> (language + keyboard layout):</p>
+<p>Update of <strong>language settings</strong>:
+For the <strong>menus</strong>: Logout &gt; Change language in top menu &gt; Login again.</p>
+<p>Authentication:</p>
+<pre><code>    User: user
+    Password: user
+</code></pre><p><img style="float: right;" src="image/osgeomenu.png" width="300">
+Missing language?
+Set it via the <strong>main applications menu</strong></p>
+<pre><code>Preferences
+    &gt; Language Support
+        &gt; Install/Remove languages
+</code></pre><hr>
+<h3 id="web-download-of-course-data-sets">Web Download of course data sets</h3>
+<p>Please create a &#x201C;<em>gis_data</em>&#x201D; directory for the course data:</p>
+<pre><code>cd $HOME
+mkdir gis_data
+</code></pre><p>Download data from: <a href="https://www.mundialis.de/workshops/osgeo_ireland2017/" target="_blank">mundialis</a>
+<em>WORKSHOP NAME BEU MUNDIALIS.DE noch &#xE4;ndern</em>!!!!</p>
+<pre><code>folder: north_carolina/ 
+- nc_zipcodes_wake_SHP.zip         308 KB
+- elev_ncstate_500m_tif.zip      1.8 MB
+- elev_lid792_1m_tif.zip            1.7 MB
+
+  [...]
+</code></pre><p>Save these <strong>3 files</strong> your computer into the new &#x201C;gis_data&#x201D; directory and unpack them.
+<img style="float: right;" src="image/wiki_NC.png" width="250">
+The other files we&apos;ll download later.</p>
+<p>The maps are located in <a href="https://en.wikipedia.org/wiki/North_Carolina" target="_blank">North Carolina</a>, USA.</p>
+<hr>
+<h3 id="osgeo-live-north-carolina-sample-data-set">OSGeo-live: North Carolina sample data set</h3>
+<p><strong>Duplikatseite Nr. 8?</strong></p>
+<h3 id="unpacking-the-course-data-set">Unpacking the course data set</h3>
+<p>Unpacking of the  nc_zipcodes_wake_SHP.zip|.tar.gz 
+(ZIP codes map of Wake county in North Carolina)</p>
+<p><span style="color:green"><em>Linux</em></span>:
+<img style="float: right;" src="image/linux.png" width="50"></p>
+<ul>
+<li>Create a directory &#x201C;gis_data&#x201D; in your home directory and unpack the file therein as follows (or use a graphical program):</li>
+</ul>
+<pre><code>mkdir $HOME/gis_data
+cd $HOME/gis_data
+tar xvfz /path/to/nc_zipcodes_wake_SHP.tar.gz
+</code></pre><p><span style="color:green"><em>Mac OSX</em></span>:
+<img style="float: right;" src="image/mac.png" width="50"></p>
+<ul>
+<li>Create a directory &#x201C;gis_data&#x201D; in your home directory and unpack the nc_zipcodes_wake_SHP.zip file therein.</li>
+</ul>
+<p><span style="color:green"><em>MS-Windows</em></span>:
+<img style="float: right;" src="image/windows.png" width="50"></p>
+<ul>
+<li>Create a directory &#x201C;gis_data&#x201D; in your home directory  and unpack the nc_zipcodes_wake_SHP.zip file therein
+Note: avoid white space in the path as well as non-ASCII characters (it may work, though)</li>
+</ul>
+<hr>
+<h2 id="qgis-grass-toolbox-versus-processing">QGIS: &#x201C;GRASS Toolbox&#x201D; versus &#x201C;Processing&#x201D;</h2>
+<p>Two ways of using GRASS GIS from QGIS</p>
+<p><strong>GRASS Toolbox</strong></p>
+<ul>
+<li>&#x201C;traditional&#x201D; GRASS GIS support in QGIS</li>
+<li>Connects directly to GRASS: uses region information and reads/writes GRASS data format directly</li>
+</ul>
+<p><strong>Processing</strong> (formerly SEXTANTE) &#x2192; GRASS GIS provider</p>
+<ul>
+<li>&#x201C;new&#x201D; GRASS GIS support</li>
+<li>Runs GRASS GIS in a temporary session for each calculation</li>
+<li>&#x2026; using GRASS GIS from QGIS (internal batch job mode)</li>
+</ul>
+<p>The choice is up to the user...</p>
+<p>So, which one? We will now use &#x201C;Processing&#x201D;!</p>
+<p><strong>Start QGIS</strong> from &#x201C;Desktop GIS&#x201D; in OSGeoLive</p>
+<hr>
+<h2 id="qgis-processing">QGIS-Processing</h2>
+<h4 id="using-qgis-and-processing">Using QGIS and Processing</h4>
+<p><img src="image/qgis_proc.png" alt="qgis"></p>
+<h3 id="vector-exercise">Vector exercise</h3>
+<h4 id="dissolve">dissolve</h4>
+<p><img src="image/vector.png" alt="vector">
+<img style="float: right;" src="image/vector2.png" width="350"></p>
+<p><strong>Dissolving geometry by string column attributes:</strong></p>
+<ul>
+<li>SHAPE file is preselected according to legend</li>
+<li>Select &#x201C;NAME&#x201D; column for dissolving</li>
+<li>Run</li>
+</ul>
+<p><strong>Processing</strong> calls GRASS GIS in a temporal session which deliver the result back (here: SHAPE file)</p>
+<hr>
+<h3 id="raster-data">Raster data</h3>
+<h4 id="loading-a-1m-lidar-map">loading a 1m LiDAR map</h4>
+<p><img src="image/lidar.png" alt="lidar"></p>
+<h4 id="styling-the-elevation-map">styling the elevation map</h4>
+<p><img src="image/style.png" alt="style"></p>
+<h4 id="hillshading">hillshading</h4>
+<p>Please try yourself
+<img src="image/hillshade.png" alt="hillshade"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Intro.html" class="navigation navigation-prev " aria-label="Previous page: 1) Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="grassgis7_intro.html" class="navigation navigation-next " aria-label="Next page: 3) GRASS GIS 7 intro">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2) GRASS GIS Software first steps","level":"1.4","depth":1,"next":{"title":"3) GRASS GIS 7 intro","level":"1.5","depth":1,"path":"grassgis7_intro.md","ref":"grassgis7_intro.md","articles":[]},"previous":{"title":"1) Introduction","level":"1.3","depth":1,"path":"Intro.md","ref":"Intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Q_and_GRASS_GIS.md","mtime":"2018-03-05T11:15:11.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-05T12:10:55.246Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
