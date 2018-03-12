@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3) GRASS GIS 7 intro · GitBook</title>
+        <title>3) Introduction to GRASS GIS 7 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -60,7 +60,7 @@
     <link rel="next" href="raster_intro.html" />
     
     
-    <link rel="prev" href="Q_and_GRASS_GIS.html" />
+    <link rel="prev" href="first_steps.md" />
     
 
     </head>
@@ -115,12 +115,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="Intro.html">
+        <li class="chapter " data-level="1.3" data-path="short_guide.html">
             
-                <a href="Intro.html">
+                <a href="short_guide.html">
             
                     
-                    1) Introduction
+                    1) Short Guide to  GRASS GIS
             
                 </a>
             
@@ -128,12 +128,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="Q_and_GRASS_GIS.html">
+        <li class="chapter " data-level="1.4" data-path="first_steps.md">
             
-                <a href="Q_and_GRASS_GIS.html">
+                <span>
             
                     
-                    2) GRASS GIS Software first steps
+                    2) First Steps
             
                 </a>
             
@@ -146,7 +146,7 @@
                 <a href="grassgis7_intro.html">
             
                     
-                    3) GRASS GIS 7 intro
+                    3) Introduction to GRASS GIS 7
             
                 </a>
             
@@ -210,7 +210,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3) GRASS GIS 7 intro</a>
+        <a href="." >3) Introduction to GRASS GIS 7</a>
     </h1>
 </div>
 
@@ -250,10 +250,10 @@
 </ul>
 <hr>
 <hr>
-<h2 id="grass-gis-database-concept">GRASS GIS Database concept</h2>
+<h2 id="grass-gis-database-concept">GRASS GIS Database concept:</h2>
 <p><img src="image/db.png" alt="db"></p>
 <hr>
-<h5 id="graphical-view">graphical view</h5>
+<h3 id="graphical-view">graphical view:</h3>
 <p><img src="image/db_graphic.png" alt="db2"></p>
 <p>&#x2026; effectively a tree of subdirectories.</p>
 <p>GRASS GIS is a multi-user system when storing &#x201C;<strong>grassdata</strong>&#x201D; on a network drive.
@@ -288,14 +288,14 @@ Users can share &#x201C;<strong>locations</strong>&#x201D; and manage therein ow
 </tbody>
 </table>
 <hr>
-<h2 id="exercise--grass-startup-and-first-steps"><span style="color:red"><em>Exercise</em></span>- GRASS startup and first steps</h2>
+<h2 id="exercise---grass-startup-and-first-steps"><span style="color:red"><em>Exercise</em></span> - GRASS startup and first steps</h2>
 <p><img src="image/startup.png" alt="startup">
 <img src="image/gui.png" alt="gui"></p>
 <hr>
 <h3 id="displaying-raster-and-vector-maps">Displaying raster and vector maps</h3>
 <p>A) Using the <strong>menu</strong>
-<img src="image/menu.png" alt="menu">
-B) Using the <strong>icons</strong>
+<img src="image/menu.png" alt="menu"></p>
+<p>B) Using the <strong>icons</strong>
 <img src="image/display.png" alt="display"></p>
 <hr>
 <h3 id="display-the-roadsmajor-vector-map">Display the &#x201C;roadsmajor&#x201D; vector map</h3>
@@ -313,13 +313,20 @@ B) Using the <strong>icons</strong>
 <img src="image/attribute.png" alt="attribute"></li>
 </ul>
 <hr>
+<h3 id="sql-queries-of-attributes">SQL queries of attributes</h3>
+<p>Select the <strong>single lane roads</strong> in the &#x201C;<strong>roadsmajor</strong>&#x201D; vector map</p>
+<ul>
+<li>Use &#x201C;Simple&#x201D; SQL query</li>
+<li>The selected vectors will be highlighted in the map display
+<img src="image/sql.png" alt="sql"></li>
+</ul>
 <h3 id="adding-map-elements">Adding map elements</h3>
 <p><img src="image/addmap.png" alt="addmap"></p>
 <hr>
 <h3 id="modify-element-settings-and-position">Modify element settings and position</h3>
-<p>Using the Wake county &#x201C;<strong>elevation</strong>&#x201D; and &#x201C;<strong>roadsmajor</strong>&#x201D; maps:
-<img src="image/pointer.png" alt="pointer">
-Use <strong>pointer</strong> to</p>
+<p>Using the Wake county &#x201C;<strong>elevation</strong>&#x201D; and &#x201C;<strong>roadsmajor</strong>&#x201D; maps:</p>
+<p><img src="image/pointer.png" alt="pointer"></p>
+<p>Use <strong>pointer</strong> to</p>
 <ul>
 <li>move map elements</li>
 <li>edit element settings with  a click</li>
@@ -331,12 +338,15 @@ Use <strong>pointer</strong> to</p>
 <h3 id="adding-a-lat-long-grid-to-the-map">Adding a Lat-Long grid to the map</h3>
 <p>Using the NC state &#x201C;<strong>elev_state_500m</strong>&#x201D; map:
 <img src="image/latlong.png" alt="latlong">
-Select a grid size in grid unts (here: LL &#x2013; 1 deg)    &#x2192;     Draw grid as LatLong WGS84 grid
-<img src="image/latlong_img.png" alt="latlong_img"></p>
+<strong>Select a grid size in grid unts (here: LL &#x2013; 1 deg)    &#x2192;     Draw grid as LatLong WGS84 grid</strong></p>
+<p><img src="image/latlong_img.png" alt="latlong_img"></p>
 <hr>
 <h3 id="map-swiping-for-multitemporal-maps">Map swiping for multitemporal maps</h3>
 <p>Load the LANDSAT 5 (1987) and 7 (2002) <strong>RGB composites</strong> of Wake county:
 <img src="image/rgb.png" alt="rgb"></p>
+<h3 id="convenient-map-selector">Convenient map selector</h3>
+<p>Load the LANDSAT <strong>channels red and green</strong> using the convenient map selector
+<img src="image/mapselector.png" alt="mapselector"></p>
 <hr>
 <h3 id="bivariate-scatterplots">Bivariate Scatterplots</h3>
 <p>Load the LANDSAT 7 2002 channels 1 and 3 of Wake county.
@@ -348,9 +358,9 @@ Select a grid size in grid unts (here: LL &#x2013; 1 deg)    &#x2192;     Draw g
 <p><span style="color:green"><em>Ninja Trick</em></span>, type the desired prefix (e.g. v.) and then <tab><tab> to complete the command name</tab></tab></p>
 <hr>
 <h3 id="grass-startup-and-first-steps">GRASS startup and first steps</h3>
-<p><strong>Know where you are...</strong>
-get projection information for the North Carolina Location
-command: <strong>g.proj</strong></p>
+<p><strong>Know where you are...</strong></p>
+<p>get projection information for the North Carolina Location</p>
+<p>command: <code>g.proj</code></p>
 <pre><code>    wxGUI: Settings &#x2192; Map projections &#x2192; Manage projections
 </code></pre><p><img src="image/wxgui.png" alt="wxgui">
 <img style="float: right;" src="image/gproj.png" width="200"></p>
@@ -426,6 +436,17 @@ command: <strong>g.proj</strong></p>
 </tr>
 </tbody>
 </table>
+<h2 id="grass-database-concept---projection">GRASS Database concept - Projection</h2>
+<p>Projection of the North Carolina Location:</p>
+<ul>
+<li><strong>NAD83(HARN) / North Carolina &#x2013; EPSG code: 3358</strong>
+<img src="image/projection.png" alt="projection"></li>
+</ul>
+<p>+proj=lcc</p>
+<p>+lat_1=36.16666666666666 +lat_2=34.33333333333334 </p>
+<p>+lat_0=33.75 +lon_0=-79</p>
+<p>+x_0=609601.22 +y_0=0</p>
+<p>+ellps=GRS80 +units=m +no_defs</p>
 <hr>
 <h3 id="graphical-user-interface-versus-command-line">Graphical user interface versus Command line</h3>
 <ul>
@@ -453,8 +474,7 @@ The graphical user interface effectively generates the respective command for th
 <hr>
 <h4 id="command-line-at-its-best">Command line at its best</h4>
 <p><strong>Advantages of the command line</strong></p>
-<p><img style="float: left;" src="image/cmdl.png" width="400">
-<img style="float: right;" src="image/script.png" width="350"></p>
+<p><img style="float: right;" src="image/cmdl.png" width="400"></p>
 <ul>
 <li><p>Run &#x201C;history&#x201D; to see all your previous commands, &#x201C;forever&#x201D;</p>
 </li>
@@ -466,6 +486,7 @@ The graphical user interface effectively generates the respective command for th
 </li>
 </ul>
 <p><code>history &gt; my_protocol.sh</code> </p>
+<p><img style="float: right;" src="image/script.png" width="350"></p>
 <ul>
 <li>Note for Windows users: no history command but
 <code>&#x201C;Command console&#x201D; tab &#x2192; &#x201C;Log file&#x201D;</code> </li>
@@ -511,7 +532,7 @@ The graphical user interface effectively generates the respective command for th
 
             
                 
-                <a href="Q_and_GRASS_GIS.html" class="navigation navigation-prev " aria-label="Previous page: 2) GRASS GIS Software first steps">
+                <a href="first_steps.md" class="navigation navigation-prev " aria-label="Previous page: 2) First Steps">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -527,7 +548,7 @@ The graphical user interface effectively generates the respective command for th
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3) GRASS GIS 7 intro","level":"1.5","depth":1,"next":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"path":"raster_intro.md","ref":"raster_intro.md","articles":[]},"previous":{"title":"2) GRASS GIS Software first steps","level":"1.4","depth":1,"path":"Q_and_GRASS_GIS.md","ref":"Q_and_GRASS_GIS.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grassgis7_intro.md","mtime":"2018-03-12T10:48:54.482Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3) Introduction to GRASS GIS 7","level":"1.5","depth":1,"next":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"path":"raster_intro.md","ref":"raster_intro.md","articles":[]},"previous":{"title":"2) First Steps","level":"1.4","depth":1,"path":"first_steps.md","ref":"first_steps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grassgis7_intro.md","mtime":"2018-03-12T13:29:25.858Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

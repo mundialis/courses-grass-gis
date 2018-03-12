@@ -1,5 +1,5 @@
 #GRASS GIS 7 RASTER intro
-<img style="float: right;" src="image/grass_symbol.png" width="100"/>
+<img style="float: right;" src="image/grass_symbol.png" width="100"/> <img style="float: right;" src="image/rast.png" width="200"/>
 
 
 ###Session Objectives
@@ -23,7 +23,7 @@ ___
 <span style="color:green">**Raster map region**</span>
 + defined by map extents and map resolution
 + each raster map has its own values
-+ computational region overrides raster region
++ <span style="color:red">reality checkcomputational region overrides raster region </span>
 
 
 <span style="color:green">**Display region**</span>
@@ -48,13 +48,14 @@ ___
 
 
 <span style="color:green">MASK (i.e., a raster map with this name, capital letters): </span>
-+ MASK'ed cells are read as NULL cells -> usually skipped (also all areas outside the computation region)
++ MASK'ed cells are read as NULL cells -> usually <span style="color:green">skipped</span> (also all areas outside the computation region)
 ![NULL](image/NULL.png)
 
 ___
 ##<span style="color:red">*Exercise*</span>– Working with MASKs
 
 Load the “zipcodes” raster map into the Layer Manager and display it.
+
 Set the computational region to the map (via right mouse button) or with
 
 ```g.region raster=zipcodes -p```
@@ -94,7 +95,7 @@ ___
 **Export of raster maps**
 + r.out.* modules
 
-+ <span style="color:red">maps are imported.!! Raster export adheres to computational region (and respects also a MASK if present)</span> 
++ <span style="color:red">!! Raster export adheres to computational region (and respects also a MASK if present)</span> 
 
 + r.out.gdal for export
 
@@ -102,8 +103,10 @@ ___
 GDAL supports > **140** raster formats.
 
 
-Raster export via GDAL
+Raster export via **GDAL**
+
 command: ```r.out.gdal```
+
 wxGUI: File -> Export raster map -> Common export formats
 
 
@@ -122,7 +125,7 @@ Now
 + zoom in
 + set region from display (icon)
 + export again with *r.out.gdal*
-+ compare size of the two exported raster maps
++ compare the size of the two exported raster maps
 + compare output of gdalinfo
 
 **Note: White space in path needs quoting with “<span style="color:blue">C:\PATH</span> TO\...”**
@@ -147,17 +150,18 @@ show metadata
 ```r.info flowacc```
 
  now look at map in map display
-####Hydrological analysis:<span style="color:green">reality check
+####Hydrological analysis: <span style="color:green">reality check
 <img src="image/hydror.png"/>
 
 
 **Perspective view of flow accumulation:**
+
 Create a nice perspective view
 + Load and highlight the “elev_lid792_1m” raster map in the layer manager
 + In the map display, switch to “3D view” – in the upper right corner
 + In wxNVIZ's “Data” tab, load “flowacc” as “Surface attrib./Color”
 + Increase the shown map resolution in “Fine mode”: reduce the value
-#MISSING IMAGE/BROKEN IMAGE!
+![hydroperspective](image/hydroperspective.png)
 
 ___
 ###Raster capabilities in GRASS GIS
@@ -169,25 +173,25 @@ ___
 +	Hydrologic modeling
 +	Reports and statistics
 
-Raster maps: DEMs, land cover, climatic maps …
+**Raster maps**: DEMs, land cover, climatic maps …
 
-Imagery maps: Landsat, MODIS, SPOT, QuickBird …
+**Imagery maps**: Landsat, MODIS, SPOT, QuickBird …
 
 ___
 ###Raster data analysis: further methods
 
-+ Additional DEM analysis modules:
++ **Additional DEM analysis modules:**
  - depression areas can be filled with **r.fill.dir**
  - flowlines can be calculated with **r.flow**
  - trace a flow through a DEM: **r.drain**
  - watershed analysis can be done with **r.watershed** and **r.terraflow**
  - cost surfaces: **r.cost**, **r.walk**
-+ Energy:
++ **Energy:**
  - cast shadows, astronomical calculations of sun position: **r.sunmask**
  - energy budget: **r.sun**
-+ Line of sight:
++ **Line of sight:**
  - viewsheds can be generated with: **r.viewshed**
-+ Interpolation methods
++ **Interpolation methods**
  - 2D inverse distance weighted: **v.surf.idw**
  - 2D from contour lines: **r.surf.contour**
  - 2D bilinear: **r.resamp.interp**

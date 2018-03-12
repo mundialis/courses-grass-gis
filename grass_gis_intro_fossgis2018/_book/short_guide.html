@@ -1,0 +1,432 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1) Short Guide to  GRASS GIS · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="first_steps.md" />
+    
+    
+    <link rel="prev" href="Info.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Starting Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Info.html">
+            
+                <a href="Info.html">
+            
+                    
+                    Information about the course
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="short_guide.html">
+            
+                <a href="short_guide.html">
+            
+                    
+                    1) Short Guide to  GRASS GIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="first_steps.md">
+            
+                <span>
+            
+                    
+                    2) First Steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="grassgis7_intro.html">
+            
+                <a href="grassgis7_intro.html">
+            
+                    
+                    3) Introduction to GRASS GIS 7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="raster_intro.html">
+            
+                <a href="raster_intro.html">
+            
+                    
+                    4) GRASS GIS 7 raster intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="vector_data.html">
+            
+                <a href="vector_data.html">
+            
+                    
+                    5) GRASS GIS 7 vector data
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1) Short Guide to  GRASS GIS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="whats-grass-gis">What&apos;s GRASS GIS?</h1>
+<p><strong>G</strong>eographic <strong>R</strong>esources  <strong>A</strong>nalysis <strong>S</strong>upport <strong>S</strong>ystem</p>
+<p><strong>Open Source GIS</strong>, developed since 1984, since 1999 GNU GPL</p>
+<p><strong>Portable code</strong> (many operating systems, 32/64bit)</p>
+<p>Your <strong>GIS backbone</strong> &#x2013; linkable to:</p>
+<p><img src="image/linkable.png"> </p>
+<ul>
+<li><p>Raster 2D/3D (voxel) processing</p>
+</li>
+<li><p>Vector 2D/3D topological processing</p>
+</li>
+<li><p>Vector network analysis support</p>
+</li>
+<li><p>Image processing system</p>
+</li>
+<li><p>Space-time cubes, temporal GIS</p>
+</li>
+<li><p>Native raster and vector format</p>
+</li>
+<li><p>3D Visualization system</p>
+</li>
+<li><p>DBMS integrated (SQL) with SQLite, DBF, PostgreSQL, MySQL and ODBC drivers</p>
+</li>
+</ul>
+<hr>
+<h3 id="graphical-overview">graphical overview</h3>
+<p>GRASS GIS 7 capabilities: a <a href="https://www.slideshare.net/markusN/grass-gis-7-capabilities-a-graphical-overview" target="_blank">graphical overview</a>, a <a href="https://grass.osgeo.org/grass74/manuals/graphical_index.html" target="_blank">graphical index</a>
+<img src="image/graphical_index.png"> </p>
+<hr>
+<h3 id="grass-gis-7-user-interface">GRASS GIS 7 User interface</h3>
+<p><img src="image/g_2.png" width="450"> <img src="image/dune.gif" width="250"> 
+<img src="image/g_3.png" width="400"> <img src="image/g_4.png" width="300"></p>
+<hr>
+<h3 id="grass-gis-7-geospatial-modeller">GRASS GIS 7: Geospatial Modeller</h3>
+<ul>
+<li>Extra Bonus:<ul>
+<li>Export to Python scripts
+<img src="image/gsm.png" width="700"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="raster-and-3d-vector">Raster and 3D vector</h3>
+<table>
+<thead>
+<tr>
+<th>Elevation model combined with extruded 3D buildings</th>
+<th>Trento, Italy Optional: KML export for virtual globes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="image/build.png" width="300"></td>
+<td><img src="image/trento.png" width="300"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="grass-topological-2d3d-vector-model">GRASS Topological 2D/3D Vector model</h3>
+<p><img style="float: right;" src="image/topo.png" width="350">
+<strong>Vector geometry types</strong></p>
+<ul>
+<li>Point</li>
+<li>Centroid</li>
+<li>Line</li>
+<li>Boundary</li>
+<li>Area (boundary + centroid)</li>
+<li>face (3D area)</li>
+<li>[kernel (3D centroid)]</li>
+<li><p>[volumes (faces + kernel)]</p>
+</li>
+<li><p>Geometry is true 3D when: x, y, z</p>
+</li>
+</ul>
+<p><strong>Use of Spatial Index</strong></p>
+<hr>
+<h3 id="grass-topological-vector-digitizer">GRASS Topological Vector Digitizer</h3>
+<p><img src="image/topovector.png"></p>
+<hr>
+<h3 id="grass-gis-7-space-time-functionality">GRASS GIS 7: Space-time functionality</h3>
+<p><img src="image/space-time.png"></p>
+<hr>
+<h5 id="tregister-registers-raster-vector-and-raster3d-maps-in-a-space-time-dataset">t.register: Registers raster, vector and raster3d maps in a space time dataset</h5>
+<p><img src="image/space-time2.png"></p>
+<hr>
+<h5 id="gguitplot-plots-the-values-of-one-or-more-temporal-raster-datasets-for-a-queried-point-defined-by-a-coordinate-pair">g.gui.tplot: plots the values of one or more temporal raster datasets for a queried point defined by a coordinate pair</h5>
+<p><img src="image/space-time3.png"></p>
+<p><img src="image/space-time4.gif" width="200"></p>
+<hr>
+<h3 id="grass-gis-7-and-r-integration">GRASS GIS 7 and R integration</h3>
+<p>There is a dedicated R packages &#x201C;<a href="https://grasswiki.osgeo.org/wiki/R_statistics/rgrass7" target="_blank">rgrass7</a>&#x201D; for GRASS GIS data exchange
+<img src="image/Grass-r.png"></p>
+<hr>
+<h3 id="python-api-integration">Python API integration</h3>
+<p><a href="https://grasswiki.osgeo.org/wiki/GRASS_and_Python" target="_blank">https://grasswiki.osgeo.org/wiki/GRASS_and_Python</a></p>
+<p><img src="image/python_example.png"></p>
+<hr>
+<h3 id="using-python-and-grass-gis-7-with-ipython">Using Python and GRASS GIS 7 with ipython</h3>
+<p>An interactive (Web based!) <a href="https://github.com/wenzeslaus/python-grass-addon" target="_blank">shortcourse</a> on writing GRASS scripts in Python
+<img src="image/ipython.png"></p>
+<hr>
+<p><img style="float: right;" src="image/addons.png" width="250"></p>
+<h3 id="grass-addons-user-contributed-extensions">GRASS Addons: User contributed extensions</h3>
+<p>The <a href="https://grass.osgeo.org/grass74/manuals/addons/" target="_blank">Addons</a> repository is SVN based:</p>
+<p>One-click installation withextension manager</p>
+<p>Increasing inflow of Python scripts</p>
+<p>Users can easily obtain write access to develop new functionality</p>
+<p>Peer review through SVN commitemail list</p>
+<p>Also github, gitlab etc. now supported</p>
+<hr>
+<h2 id="wheres-the-stuff">Where&apos;s the stuff?</h2>
+<h5 id="grass-gis-7-software">GRASS GIS 7 Software:</h5>
+<p>Free <a href="https://grass.osgeo.org/download/" target="_blank">download</a> for MS Windows, MacOSX, Linux and source code:</p>
+<p><a href="https://grass.osgeo.org/grass7/manuals/addons/" target="_blank">Addons</a> (user contributed extensions):</p>
+<h5 id="free-sample-data">Free sample data:</h5>
+<p>Rich <a href="https://grass.osgeo.org/download/sample-data/" target="_blank">data set</a> of North Carolina (NC)
+&#x2026; available as GRASS GIS location and in common GIS formats</p>
+<h5 id="user-help">User Help:</h5>
+<p><a href="https://grass.osgeo.org/support/" target="_blank"><strong>Mailing lists</strong></a> (also in different languages):</p>
+<p><a href="https://grasswiki.osgeo.org/wiki/" target="_blank"><strong>Wiki</strong></a></p>
+<p><a href="https://grass.osgeo.org/documentation/manuals/" target="_blank"><strong>Manuals</strong></a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Info.html" class="navigation navigation-prev " aria-label="Previous page: Information about the course">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="first_steps.md" class="navigation navigation-next " aria-label="Next page: 2) First Steps">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1) Short Guide to  GRASS GIS","level":"1.3","depth":1,"next":{"title":"2) First Steps","level":"1.4","depth":1,"path":"first_steps.md","ref":"first_steps.md","articles":[]},"previous":{"title":"Information about the course","level":"1.2","depth":1,"path":"Info.md","ref":"Info.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"short_guide.md","mtime":"2018-03-12T12:28:15.500Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

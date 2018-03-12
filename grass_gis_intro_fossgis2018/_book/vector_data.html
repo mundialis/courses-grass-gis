@@ -113,12 +113,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="Intro.html">
+        <li class="chapter " data-level="1.3" data-path="short_guide.html">
             
-                <a href="Intro.html">
+                <a href="short_guide.html">
             
                     
-                    1) Introduction
+                    1) Short Guide to  GRASS GIS
             
                 </a>
             
@@ -126,12 +126,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="Q_and_GRASS_GIS.html">
+        <li class="chapter " data-level="1.4" data-path="first_steps.md">
             
-                <a href="Q_and_GRASS_GIS.html">
+                <span>
             
                     
-                    2) GRASS GIS Software first steps
+                    2) First Steps
             
                 </a>
             
@@ -144,7 +144,7 @@
                 <a href="grassgis7_intro.html">
             
                     
-                    3) GRASS GIS 7 intro
+                    3) Introduction to GRASS GIS 7
             
                 </a>
             
@@ -238,14 +238,24 @@
 <hr>
 <hr>
 <h2 id="what-is-vector-topology">What is vector topology?</h2>
-<p><strong>Non-topological</strong> vector formats:
+<p><span style="color:red"><strong>Non-topological</strong></span> vector formats:
 <img style="float: right;" src="image/nontopo.png" width="350">
 E.g. OGC Simple Features, ESRI shapefiles</p>
 <p>Geometry types: points, lines, polygons</p>
 <p>&#x2192; Problem: replicated boundaries for adjacent areas</p>
 <p>Faster computations, but extra work for maintenance</p>
-<p><strong>Non-topological</strong> polygon map being generalized</p>
-<p>(all polygons are treated independently, leading to potentialerrors)</p>
+<p><span style="color:red"><strong>Non-topological</strong></span> polygon map being generalized</p>
+<p>(all polygons are treated independently, leading to potential errors)</p>
+<hr>
+<p><span style="color:green"><strong>True topological</strong></span> vector format:
+<img style="float: right;" src="image/truetopo.png" width="400"></p>
+<ul>
+<li>Areas are constructed from boundaries</li>
+<li>Boundaries are shared between adjacent areas</li>
+</ul>
+<p>Slower computations, but less (nearly no manual) maintenance</p>
+<p><span style="color:green"><strong>Topological</strong></span> polygon map being generalized</p>
+<p>(no errors possible since common linesare shared)</p>
 <hr>
 <h2 id="grass-gis-7-vector-features">GRASS GIS 7 Vector features</h2>
 <p><strong>Native vector format</strong></p>
@@ -266,12 +276,12 @@ E.g. OGC Simple Features, ESRI shapefiles</p>
 <li>Centroid</li>
 <li>Line</li>
 <li>Boundary</li>
-<li>Area (boundary + centroid)</li>
+<li>Area (Boundaries + Centroids)</li>
 <li>face (3D area)</li>
 <li>[kernel (3D centroid)]</li>
 <li><p>[volumes (faces + kernel)]</p>
 </li>
-<li><p>Geometry is true 3D when: x, y, z</p>
+<li><p>Geometry is <strong>true 3D</strong> when: x, y, z</p>
 </li>
 </ul>
 <hr>
@@ -289,9 +299,9 @@ E.g. OGC Simple Features, ESRI shapefiles</p>
 <h3 id="derived-geometry-types-2">Derived geometry types (2)</h3>
 <p><strong>Derived</strong> geometry types, constructed from basic types</p>
 <ul>
-<li>Area (closed ring of boundaries + centroid)</li>
-<li>Isle (closed ring of boundaries, no centroid)</li>
-<li>Node (at both ends of lines/boundaries)</li>
+<li><strong>Area</strong> (closed ring of boundaries + centroid)</li>
+<li><strong>Isle</strong> (closed ring of boundaries, no centroid)</li>
+<li><strong>Node</strong> (at both ends of lines/boundaries)</li>
 </ul>
 <p>Isles and Nodes are not visible to the user</p>
 <p><img src="image/derived_geo.png" alt="derived_geo"></p>
@@ -436,7 +446,7 @@ v.dissolve in=boundary_county_cat2 \
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5) GRASS GIS 7 vector data","level":"1.7","depth":1,"previous":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"path":"raster_intro.md","ref":"raster_intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vector_data.md","mtime":"2018-03-12T11:02:54.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5) GRASS GIS 7 vector data","level":"1.7","depth":1,"previous":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"path":"raster_intro.md","ref":"raster_intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vector_data.md","mtime":"2018-03-12T14:03:22.710Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

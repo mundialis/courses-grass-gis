@@ -115,12 +115,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="Intro.html">
+        <li class="chapter " data-level="1.3" data-path="short_guide.html">
             
-                <a href="Intro.html">
+                <a href="short_guide.html">
             
                     
-                    1) Introduction
+                    1) Short Guide to  GRASS GIS
             
                 </a>
             
@@ -128,12 +128,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="Q_and_GRASS_GIS.html">
+        <li class="chapter " data-level="1.4" data-path="first_steps.md">
             
-                <a href="Q_and_GRASS_GIS.html">
+                <span>
             
                     
-                    2) GRASS GIS Software first steps
+                    2) First Steps
             
                 </a>
             
@@ -146,7 +146,7 @@
                 <a href="grassgis7_intro.html">
             
                     
-                    3) GRASS GIS 7 intro
+                    3) Introduction to GRASS GIS 7
             
                 </a>
             
@@ -226,7 +226,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="grass-gis-7-raster-intro">GRASS GIS 7 RASTER intro</h1>
-<p><img style="float: right;" src="image/grass_symbol.png" width="100"></p>
+<p><img style="float: right;" src="image/grass_symbol.png" width="100"> <img style="float: right;" src="image/rast.png" width="200"></p>
 <h3 id="session-objectives">Session Objectives</h3>
 <ul>
 <li>GRASS GIS raster processing concepts</li>
@@ -251,7 +251,7 @@
 <ul>
 <li>defined by map extents and map resolution</li>
 <li>each raster map has its own values</li>
-<li>computational region overrides raster region</li>
+<li><span style="color:red">reality checkcomputational region overrides raster region </span></li>
 </ul>
 <p><span style="color:green"><strong>Display region</strong></span></p>
 <ul>
@@ -271,13 +271,13 @@
 <p><span style="color:green">NULL values</span>: no value &#x2013; e.g. gaps in DEM</p>
 <p><span style="color:green">MASK (i.e., a raster map with this name, capital letters): </span></p>
 <ul>
-<li>MASK&apos;ed cells are read as NULL cells -&gt; usually skipped (also all areas outside the computation region)
+<li>MASK&apos;ed cells are read as NULL cells -&gt; usually <span style="color:green">skipped</span> (also all areas outside the computation region)
 <img src="image/NULL.png" alt="NULL"></li>
 </ul>
 <hr>
 <h2 id="exercise&#x2013;-working-with-masks"><span style="color:red"><em>Exercise</em></span>&#x2013; Working with MASKs</h2>
-<p>Load the &#x201C;zipcodes&#x201D; raster map into the Layer Manager and display it.
-Set the computational region to the map (via right mouse button) or with</p>
+<p>Load the &#x201C;zipcodes&#x201D; raster map into the Layer Manager and display it.</p>
+<p>Set the computational region to the map (via right mouse button) or with</p>
 <p><code>g.region raster=zipcodes -p</code></p>
 <p>Now we want to pick only one ZIP code and restrict subsequent calculations to only that part.</p>
 <ul>
@@ -314,15 +314,15 @@ command:
 <ul>
 <li><p>r.out.* modules</p>
 </li>
-<li><p><span style="color:red">maps are imported.!! Raster export adheres to computational region (and respects also a MASK if present)</span> </p>
+<li><p><span style="color:red">!! Raster export adheres to computational region (and respects also a MASK if present)</span> </p>
 </li>
 <li><p>r.out.gdal for export</p>
 </li>
 </ul>
 <p>GDAL supports &gt; <strong>140</strong> raster formats.</p>
-<p>Raster export via GDAL
-command: <code>r.out.gdal</code>
-wxGUI: File -&gt; Export raster map -&gt; Common export formats</p>
+<p>Raster export via <strong>GDAL</strong></p>
+<p>command: <code>r.out.gdal</code></p>
+<p>wxGUI: File -&gt; Export raster map -&gt; Common export formats</p>
 <h4 id="exercise"><span style="color:red">Exercise:</span></h4>
 <p>Set region to some raster map</p>
 <p><code>&gt;g.region -p raster=&lt;raster&gt;</code></p>
@@ -334,7 +334,7 @@ wxGUI: File -&gt; Export raster map -&gt; Common export formats</p>
 <li>zoom in</li>
 <li>set region from display (icon)</li>
 <li>export again with <em>r.out.gdal</em></li>
-<li>compare size of the two exported raster maps</li>
+<li>compare the size of the two exported raster maps</li>
 <li>compare output of gdalinfo</li>
 </ul>
 <p><strong>Note: White space in path needs quoting with &#x201C;<span style="color:blue">C:\PATH</span> TO...&#x201D;</strong></p>
@@ -350,16 +350,16 @@ wxGUI: File -&gt; Export raster map -&gt; Common export formats</p>
 <p>show metadata</p>
 <p><code>r.info flowacc</code></p>
 <p> now look at map in map display</p>
-<h4 id="hydrological-analysisreality-check">Hydrological analysis:<span style="color:green">reality check</span></h4>
+<h4 id="hydrological-analysis-reality-check">Hydrological analysis: <span style="color:green">reality check</span></h4>
 <p><img src="image/hydror.png"></p>
-<p><strong>Perspective view of flow accumulation:</strong>
-Create a nice perspective view</p>
+<p><strong>Perspective view of flow accumulation:</strong></p>
+<p>Create a nice perspective view</p>
 <ul>
 <li>Load and highlight the &#x201C;elev_lid792_1m&#x201D; raster map in the layer manager</li>
 <li>In the map display, switch to &#x201C;3D view&#x201D; &#x2013; in the upper right corner</li>
 <li>In wxNVIZ&apos;s &#x201C;Data&#x201D; tab, load &#x201C;flowacc&#x201D; as &#x201C;Surface attrib./Color&#x201D;</li>
-<li>Increase the shown map resolution in &#x201C;Fine mode&#x201D;: reduce the value<h1 id="missing-imagebroken-image">MISSING IMAGE/BROKEN IMAGE!</h1>
-</li>
+<li>Increase the shown map resolution in &#x201C;Fine mode&#x201D;: reduce the value
+<img src="image/hydroperspective.png" alt="hydroperspective"></li>
 </ul>
 <hr>
 <h3 id="raster-capabilities-in-grass-gis">Raster capabilities in GRASS GIS</h3>
@@ -372,12 +372,12 @@ Create a nice perspective view</p>
 <li>Hydrologic modeling</li>
 <li>Reports and statistics</li>
 </ul>
-<p>Raster maps: DEMs, land cover, climatic maps &#x2026;</p>
-<p>Imagery maps: Landsat, MODIS, SPOT, QuickBird &#x2026;</p>
+<p><strong>Raster maps</strong>: DEMs, land cover, climatic maps &#x2026;</p>
+<p><strong>Imagery maps</strong>: Landsat, MODIS, SPOT, QuickBird &#x2026;</p>
 <hr>
 <h3 id="raster-data-analysis-further-methods">Raster data analysis: further methods</h3>
 <ul>
-<li>Additional DEM analysis modules:<ul>
+<li><strong>Additional DEM analysis modules:</strong><ul>
 <li>depression areas can be filled with <strong>r.fill.dir</strong></li>
 <li>flowlines can be calculated with <strong>r.flow</strong></li>
 <li>trace a flow through a DEM: <strong>r.drain</strong></li>
@@ -385,16 +385,16 @@ Create a nice perspective view</p>
 <li>cost surfaces: <strong>r.cost</strong>, <strong>r.walk</strong></li>
 </ul>
 </li>
-<li>Energy:<ul>
+<li><strong>Energy:</strong><ul>
 <li>cast shadows, astronomical calculations of sun position: <strong>r.sunmask</strong></li>
 <li>energy budget: <strong>r.sun</strong></li>
 </ul>
 </li>
-<li>Line of sight:<ul>
+<li><strong>Line of sight:</strong><ul>
 <li>viewsheds can be generated with: <strong>r.viewshed</strong></li>
 </ul>
 </li>
-<li>Interpolation methods<ul>
+<li><strong>Interpolation methods</strong><ul>
 <li>2D inverse distance weighted: <strong>v.surf.idw</strong></li>
 <li>2D from contour lines: <strong>r.surf.contour</strong></li>
 <li>2D bilinear: <strong>r.resamp.interp</strong></li>
@@ -432,7 +432,7 @@ Create a nice perspective view</p>
 
             
                 
-                <a href="grassgis7_intro.html" class="navigation navigation-prev " aria-label="Previous page: 3) GRASS GIS 7 intro">
+                <a href="grassgis7_intro.html" class="navigation navigation-prev " aria-label="Previous page: 3) Introduction to GRASS GIS 7">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -448,7 +448,7 @@ Create a nice perspective view</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"next":{"title":"5) GRASS GIS 7 vector data","level":"1.7","depth":1,"path":"vector_data.md","ref":"vector_data.md","articles":[]},"previous":{"title":"3) GRASS GIS 7 intro","level":"1.5","depth":1,"path":"grassgis7_intro.md","ref":"grassgis7_intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"raster_intro.md","mtime":"2018-03-12T10:55:31.186Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"next":{"title":"5) GRASS GIS 7 vector data","level":"1.7","depth":1,"path":"vector_data.md","ref":"vector_data.md","articles":[]},"previous":{"title":"3) Introduction to GRASS GIS 7","level":"1.5","depth":1,"path":"grassgis7_intro.md","ref":"grassgis7_intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"raster_intro.md","mtime":"2018-03-12T13:50:29.122Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

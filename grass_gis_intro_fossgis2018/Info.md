@@ -1,4 +1,4 @@
-## About the trainer
+# About the trainer
 
 **Markus Neteler**: Germany – Italy – Germany
 
@@ -23,7 +23,7 @@
 | Kölnstraße 99,  53111 Bonn, Germany          |  http://www.mundialis.de |
 ---
 
-##Course Overview
+#Course Overview
 
 1) [**Introduction**](../Intro.html#Introduction)
  * Who is the presenter

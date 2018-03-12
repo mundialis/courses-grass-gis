@@ -14,7 +14,7 @@ ___
 ___
 ##What is vector topology?
 
-**Non-topological** vector formats:
+<span style="color:red">**Non-topological**</span> vector formats:
 <img style="float: right;" src="image/nontopo.png" width="350"/>
 E.g. OGC Simple Features, ESRI shapefiles
 
@@ -25,9 +25,27 @@ Geometry types: points, lines, polygons
 
 Faster computations, but extra work for maintenance
 
-**Non-topological** polygon map being generalized
+<span style="color:red">**Non-topological**</span> polygon map being generalized
 
-(all polygons are treated independently, leading to potentialerrors)
+(all polygons are treated independently, leading to potential errors)
+
+___
+<span style="color:green">**True topological**</span> vector format:
+<img style="float: right;" src="image/truetopo.png" width="400"/>
++ Areas are constructed from boundaries
++ Boundaries are shared between adjacent areas
+
+Slower computations, but less (nearly no manual) maintenance
+
+
+<span style="color:green">**Topological**</span> polygon map being generalized
+
+(no errors possible since common linesare shared)
+
+
+
+
+
 
 ___
 ##GRASS GIS 7 Vector features
@@ -48,12 +66,12 @@ ___
 * Centroid
 * Line
 * Boundary
-* Area (boundary + centroid)
+* Area (Boundaries + Centroids)
 * face (3D area)
 * [kernel (3D centroid)]
 * [volumes (faces + kernel)]
 
-* Geometry is true 3D when: x, y, z
+* Geometry is **true 3D** when: x, y, z
 
 ___
 ###Basic geometry types (1)
@@ -71,9 +89,9 @@ A GRASS vector map can contain a combination of several different types
 ___
 ###Derived geometry types (2)
 **Derived** geometry types, constructed from basic types
-+ Area (closed ring of boundaries + centroid)
-+ Isle (closed ring of boundaries, no centroid)
-+ Node (at both ends of lines/boundaries)
++ **Area** (closed ring of boundaries + centroid)
++ **Isle** (closed ring of boundaries, no centroid)
++ **Node** (at both ends of lines/boundaries)
 
 Isles and Nodes are not visible to the user
 
