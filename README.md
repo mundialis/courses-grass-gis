@@ -1,8 +1,5 @@
 # GRASS GIS 7 workshop
 
-## Course Introduction
-## GRASS GIS 7 Overview
-
 ### Markus Neteler
 
 GRASS GIS 7 workshop

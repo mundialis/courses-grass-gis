@@ -1,0 +1,479 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5) GRASS GIS 7 vector data · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="raster_intro.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Starting Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Info.html">
+            
+                <a href="Info.html">
+            
+                    
+                    Information about the course
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Intro.html">
+            
+                <a href="Intro.html">
+            
+                    
+                    1) Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Q_and_GRASS_GIS.html">
+            
+                <a href="Q_and_GRASS_GIS.html">
+            
+                    
+                    2) GRASS GIS Software first steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="grassgis7_intro.html">
+            
+                <a href="grassgis7_intro.html">
+            
+                    
+                    3) GRASS GIS 7 intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="raster_intro.html">
+            
+                <a href="raster_intro.html">
+            
+                    
+                    4) GRASS GIS 7 raster intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="vector_data.html">
+            
+                <a href="vector_data.html">
+            
+                    
+                    5) GRASS GIS 7 vector data
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >5) GRASS GIS 7 vector data</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="introduction-to-vector-data-in-g7">Introduction to vector data in G7</h1>
+<p><img style="float: right;" src="image/grass_symbol.png" width="100"></p>
+<h3 id="session-objectives">Session Objectives</h3>
+<ul>
+<li>Why a topological vector data model</li>
+<li>Topological vector data model in GRASS GIS 7</li>
+<li>Vector feature extraction</li>
+<li>Vector geometry dissolving</li>
+<li>Geometry editing/digitizing</li>
+<li>Import/export</li>
+<li>Capabilities of GRASS GIS&apos; vector engine</li>
+</ul>
+<hr>
+<hr>
+<h2 id="what-is-vector-topology">What is vector topology?</h2>
+<p><strong>Non-topological</strong> vector formats:
+<img style="float: right;" src="image/nontopo.png" width="350">
+E.g. OGC Simple Features, ESRI shapefiles</p>
+<p>Geometry types: points, lines, polygons</p>
+<p>&#x2192; Problem: replicated boundaries for adjacent areas</p>
+<p>Faster computations, but extra work for maintenance</p>
+<p><strong>Non-topological</strong> polygon map being generalized</p>
+<p>(all polygons are treated independently, leading to potentialerrors)</p>
+<hr>
+<h2 id="grass-gis-7-vector-features">GRASS GIS 7 Vector features</h2>
+<p><strong>Native vector format</strong></p>
+<ul>
+<li>Vector topology</li>
+<li>m:n mapping of geometry features to attributes</li>
+<li>Support of vector layers</li>
+<li>OGC Simple Features &#x2190;&#x2192; Topological Vector Conversion</li>
+<li><a href="https://grasswiki.osgeo.org/wiki/Vector_Database_Management" target="_blank">Database Management system</a> (DBMS) with SQL support</li>
+<li>SQLite (default DB backend), PostgreSQL + PostGIS, MySQL, ODBC (, DBF)</li>
+</ul>
+<hr>
+<h2 id="grass-gis-vector-model">GRASS GIS Vector model</h2>
+<p><img style="float: right;" src="image/topo.png" width="300">
+<strong>Vector geometry types</strong></p>
+<ul>
+<li>Point</li>
+<li>Centroid</li>
+<li>Line</li>
+<li>Boundary</li>
+<li>Area (boundary + centroid)</li>
+<li>face (3D area)</li>
+<li>[kernel (3D centroid)]</li>
+<li><p>[volumes (faces + kernel)]</p>
+</li>
+<li><p>Geometry is true 3D when: x, y, z</p>
+</li>
+</ul>
+<hr>
+<h3 id="basic-geometry-types-1">Basic geometry types (1)</h3>
+<p><strong>Basic</strong> geometry types, they can be edited <strong>directly</strong>:</p>
+<ul>
+<li>Point</li>
+<li>Centroid</li>
+<li>Line</li>
+<li>Boundary</li>
+</ul>
+<p>A GRASS vector map can contain a combination of several different types
+<img src="image/geom_types.png" alt="geom_types"></p>
+<hr>
+<h3 id="derived-geometry-types-2">Derived geometry types (2)</h3>
+<p><strong>Derived</strong> geometry types, constructed from basic types</p>
+<ul>
+<li>Area (closed ring of boundaries + centroid)</li>
+<li>Isle (closed ring of boundaries, no centroid)</li>
+<li>Node (at both ends of lines/boundaries)</li>
+</ul>
+<p>Isles and Nodes are not visible to the user</p>
+<p><img src="image/derived_geo.png" alt="derived_geo"></p>
+<hr>
+<h3 id="grass-gis-topological-vector-digitizer">GRASS GIS topological vector digitizer</h3>
+<p><img src="image/topovector.png"></p>
+<hr>
+<hr>
+<h2 id="exercise-vector-feature-extraction"><span style="color:red"><em>Exercise</em></span>: Vector feature extraction</h2>
+<h4 id="extract-by-attributes"><strong>Extract by attributes</strong></h4>
+<p><em>GRASS GIS module:</em></p>
+<p><code>v.extract</code></p>
+<p>Input: <em>boundary_county</em></p>
+<p>Output: <em>boundary_wake</em></p>
+<p><img style="float: right;" src="image/wake.png" width="150"></p>
+<p><strong>Command:</strong></p>
+<pre><code>v.extract input=boundary_county \
+        output=boundary_wake \
+        where=&quot;NAME = &apos;WAKE&apos;&quot;
+</code></pre><hr>
+<h2 id="vector-feature-select-operations-vselect-geos">Vector feature select operations: v.select (GEOS)</h2>
+<p><img src="image/vselect.png" alt="vselect"></p>
+<h2 id="exercise-vector-feature-extraction"><span style="color:red"><em>Exercise</em></span>: Vector feature extraction</h2>
+<h4 id="extract-with-another-vector-selecting-full-vector"><strong>Extract with another vector</strong> (selecting full vector)</h4>
+<p><em>GRASS GIS module:</em></p>
+<p><code>v.select</code></p>
+<p>Input: <em>boundary_wake, railroads</em></p>
+<p>Output: <em>railroads_wake</em></p>
+<p><strong>Command:</strong></p>
+<pre><code>v.select ain=railroads bin=boundary_wake\
+         out=railroads_wake atype=line \
+         btype=area operator=overlap
+</code></pre><hr>
+<h3 id="vector-feature-overlay-operations">Vector feature overlay operations</h3>
+<p><strong>Boolean operators</strong></p>
+<p><em>GRASS GIS module:</em></p>
+<p><code>v.overlay</code></p>
+<p><img src="image/overlay.png" alt="overlay"></p>
+<h4 id="extract-with-another-vector-clipping-vector"><strong>Extract with another vector</strong> (clipping vector)</h4>
+<p><em>GRASS GIS module:</em></p>
+<p><code>v.overlay</code></p>
+<p>Input: <em>boundary_wake, railroads</em></p>
+<p>Output: <em>railroads_wake_clip</em></p>
+<p><strong>Command:</strong></p>
+<pre><code>v.overlay ain=railroads bin=boundary_wake \
+          out=railroads_wake_clip atype=line \
+          btype=area operator=and
+</code></pre><p><em>try</em> <code>operator=not</code></p>
+<hr>
+<h4 id="dissolving-vector-boundaries">Dissolving vector boundaries</h4>
+<p>Combination of several areas into one area based on common categories or attributes</p>
+<p><em>Dissolving common boundaries between the two interior areas:</em>
+<img src="image/dissolve.png" alt="dissolve"></p>
+<h2 id="exercise-vector-feature-extraction"><span style="color:red"><em>Exercise</em></span>: Vector feature extraction</h2>
+<h4 id="dissolving-with-categories">Dissolving with categories</h4>
+<p><em>GRASS GIS module:</em></p>
+<p><code>v.dissolve</code></p>
+<p>Input: <em>boundary_county</em></p>
+<p>Output: <em>nc_boundary</em></p>
+<p><strong>Command:</strong></p>
+<pre><code>v.category in=boundary_county type=centroid \
+           out=boundary_county_cat2 layer=2 \
+           cat=1 step=0 option=add
+
+v.db.addtable map=boundary_county_cat2 layer=2
+
+v.dissolve in=boundary_county_cat2 \
+           out=nc_boundary layer=2 column=cat
+</code></pre><hr>
+<h3 id="grass-gis-topological-vector-digitizer">GRASS GIS topological vector digitizer</h3>
+<p><img src="image/topovector.png"></p>
+<hr>
+<h2 id="grass-vector-data-exchange">GRASS Vector data exchange</h2>
+<p><strong>Import of vector maps</strong></p>
+<ul>
+<li>v.in.ogr module</li>
+<li><p><span style="color:blue">v.import</span> (it also offers reprojection on the fly)!</p>
+</li>
+<li><p>Always the <span style="color:red">full</span> map is imported.</p>
+</li>
+</ul>
+<p><strong>Export of raster maps</strong></p>
+<ul>
+<li><p>mv.out.ogr module</p>
+</li>
+<li><p>Always the <span style="color:red">full</span> map is exported.</p>
+</li>
+</ul>
+<ul>
+<li>OGR supported &gt; <strong>80</strong> vector formats</li>
+</ul>
+<p><strong>Creating a map from Spreadsheet file (MS Excel file, OpenDocument ODS, CSV file):</strong></p>
+<p>A new vector point map can be directly created from a selected sheet in a spreadsheet:</p>
+<p>the z coordinate is optional</p>
+<pre><code>v.in.db table=List1 x=long y=lat z=height \
+        output=meteodata \
+        driver=ogr datatabase=meteodata.xls
+</code></pre><p>Note that in this example the key option is omitted (so the key column is then automatically added)</p>
+<hr>
+<h2 id="vector-capabilities">Vector capabilities</h2>
+<p><strong>Example vector module groups</strong></p>
+<p>Topological geometry feature digitizing/editing</p>
+<p><a href="http://grasswiki.osgeo.org/wiki/LIDAR" target="_blank">LiDAR analysis</a></p>
+<p><a href="http://grasswiki.osgeo.org/wiki/Linear_Reference_System" target="_blank">Linear referencing (LRS)</a> &#x2013; v.lrs.*:</p>
+<p><a href="http://grasswiki.osgeo.org/wiki/Vector_network_analysis" target="_blank">Network analysis</a> &#x2013; v.net.*:</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="raster_intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 4) GRASS GIS 7 raster intro">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5) GRASS GIS 7 vector data","level":"1.7","depth":1,"previous":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"path":"raster_intro.md","ref":"raster_intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vector_data.md","mtime":"2018-03-12T11:02:54.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

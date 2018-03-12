@@ -1,0 +1,491 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4) GRASS GIS 7 raster intro · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vector_data.html" />
+    
+    
+    <link rel="prev" href="grassgis7_intro.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Starting Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Info.html">
+            
+                <a href="Info.html">
+            
+                    
+                    Information about the course
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Intro.html">
+            
+                <a href="Intro.html">
+            
+                    
+                    1) Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Q_and_GRASS_GIS.html">
+            
+                <a href="Q_and_GRASS_GIS.html">
+            
+                    
+                    2) GRASS GIS Software first steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="grassgis7_intro.html">
+            
+                <a href="grassgis7_intro.html">
+            
+                    
+                    3) GRASS GIS 7 intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="raster_intro.html">
+            
+                <a href="raster_intro.html">
+            
+                    
+                    4) GRASS GIS 7 raster intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="vector_data.html">
+            
+                <a href="vector_data.html">
+            
+                    
+                    5) GRASS GIS 7 vector data
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >4) GRASS GIS 7 raster intro</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="grass-gis-7-raster-intro">GRASS GIS 7 RASTER intro</h1>
+<p><img style="float: right;" src="image/grass_symbol.png" width="100"></p>
+<h3 id="session-objectives">Session Objectives</h3>
+<ul>
+<li>GRASS GIS raster processing concepts</li>
+<li>Import of a GeoTIFF (DEM)</li>
+<li>Applying a color table to the DEM</li>
+<li>Raster: NULL values and MASK</li>
+<li>Working with the computational region</li>
+<li>Region and raster map import/export</li>
+<li>Raster map export</li>
+<li>Simple hydrological modelling</li>
+<li>Raster capabilities in GRASS GIS</li>
+</ul>
+<hr>
+<hr>
+<h2 id="computational-region-concept">computational region concept</h2>
+<p><span style="color:green"><strong>Computational region</strong></span></p>
+<ul>
+<li>defined by region extent and raster resolution</li>
+<li>applies to raster operations</li>
+</ul>
+<p><span style="color:green"><strong>Raster map region</strong></span></p>
+<ul>
+<li>defined by map extents and map resolution</li>
+<li>each raster map has its own values</li>
+<li>computational region overrides raster region</li>
+</ul>
+<p><span style="color:green"><strong>Display region</strong></span></p>
+<ul>
+<li>extents of the current map display</li>
+<li>independent of the current computational region and the raster region</li>
+<li>user can set the current computational region from display region</li>
+</ul>
+<hr>
+<h2 id="exercise-&#x2013;-import-of-a-geotiff-dem"><span style="color:red"><em>Exercise</em></span> &#x2013; Import of a GeoTIFF (DEM)</h2>
+<p>Since GRASS handles data in its own format, GIS files need to be imported (r.in.gdal/r.import) or just registered (r.external):</p>
+<p><img src="image/import_tiff.png" alt="import_tiff"></p>
+<hr>
+<h3 id="applying-a-color-table-to-dem">Applying a color table to DEM</h3>
+<p><img src="image/color_tab.png" alt="color_tab"></p>
+<hr>
+<h3 id="raster-null-values-and-mask">Raster: NULL values and MASK</h3>
+<p><span style="color:green">NULL values</span>: no value &#x2013; e.g. gaps in DEM</p>
+<p><span style="color:green">MASK (i.e., a raster map with this name, capital letters): </span></p>
+<ul>
+<li>MASK&apos;ed cells are read as NULL cells -&gt; usually skipped (also all areas outside the computation region)
+<img src="image/NULL.png" alt="NULL"></li>
+</ul>
+<hr>
+<h2 id="exercise&#x2013;-working-with-masks"><span style="color:red"><em>Exercise</em></span>&#x2013; Working with MASKs</h2>
+<p>Load the &#x201C;zipcodes&#x201D; raster map into the Layer Manager and display it.
+Set the computational region to the map (via right mouse button) or with</p>
+<p><code>g.region raster=zipcodes -p</code></p>
+<p>Now we want to pick only one ZIP code and restrict subsequent calculations to only that part.</p>
+<ul>
+<li>List raster attributes (or use query tool on map):</li>
+</ul>
+<p><code>r.category zipcodes</code></p>
+<ul>
+<li>Set the MASK (here: using a raster map, also vector maps are supported &#x2013; an inverse mask can be set adding the -i flag):</li>
+</ul>
+<p><code>r.mask raster=zipcodes maskcats=27605</code></p>
+<ul>
+<li>Now display the map again (&#x201C;Render map&#x201D; icon) to see only that particular area of the &#x201C;zipcodes&#x201D; map</li>
+</ul>
+<p>Note: the computational region is not updated by that.</p>
+<p>MASK removal: r.mask -r</p>
+<hr>
+<h3 id="working-with-the-region">Working with the region</h3>
+<p>Print values of computational region (valid for the active MAPSET)
+command:
+<code>g.region -p</code></p>
+<p><strong>wxGUI</strong>: Settings -&gt; Region -&gt; Set region
+<img src="image/setregion.png" alt="setregion"></p>
+<hr>
+<h3 id="raster-map-importexport">Raster map import/export</h3>
+<p><strong>Import of raster maps</strong></p>
+<ul>
+<li>r.in.* modules</li>
+<li><p><span style="color:blue">r.import</span> (it also offers reprojection on the fly)!</p>
+</li>
+<li><p>Always the <span style="color:red">full</span> maps are imported.</p>
+</li>
+</ul>
+<p><strong>Export of raster maps</strong></p>
+<ul>
+<li><p>r.out.* modules</p>
+</li>
+<li><p><span style="color:red">maps are imported.!! Raster export adheres to computational region (and respects also a MASK if present)</span> </p>
+</li>
+<li><p>r.out.gdal for export</p>
+</li>
+</ul>
+<p>GDAL supports &gt; <strong>140</strong> raster formats.</p>
+<p>Raster export via GDAL
+command: <code>r.out.gdal</code>
+wxGUI: File -&gt; Export raster map -&gt; Common export formats</p>
+<h4 id="exercise"><span style="color:red">Exercise:</span></h4>
+<p>Set region to some raster map</p>
+<p><code>&gt;g.region -p raster=&lt;raster&gt;</code></p>
+<p>export this raster with <strong>r.out.gdal</strong></p>
+<p><code>&gt; r.out.gdal input=&lt;raster&gt; output=&lt;raster&gt;.tif</code></p>
+<p>Now</p>
+<ul>
+<li>display this raster map</li>
+<li>zoom in</li>
+<li>set region from display (icon)</li>
+<li>export again with <em>r.out.gdal</em></li>
+<li>compare size of the two exported raster maps</li>
+<li>compare output of gdalinfo</li>
+</ul>
+<p><strong>Note: White space in path needs quoting with &#x201C;<span style="color:blue">C:\PATH</span> TO...&#x201D;</strong></p>
+<hr>
+<h3 id="hydrological-modelling">Hydrological modelling</h3>
+<p>set computational region to map (using map metadata)</p>
+<p><code>g.region raster=elev_lid792_1m -p</code></p>
+<p>flow accumulation with MFD</p>
+<p><code>r.watershed elevation=elev_lid792_1m accumulation=flowacc</code>
+<img style="float: right;" src="image/hydro.png" width="350"></p>
+<p>check map list</p>
+<p><code>g.list raster</code></p>
+<p>show metadata</p>
+<p><code>r.info flowacc</code></p>
+<p> now look at map in map display</p>
+<h4 id="hydrological-analysisreality-check">Hydrological analysis:<span style="color:green">reality check</span></h4>
+<p><img src="image/hydror.png"></p>
+<p><strong>Perspective view of flow accumulation:</strong>
+Create a nice perspective view</p>
+<ul>
+<li>Load and highlight the &#x201C;elev_lid792_1m&#x201D; raster map in the layer manager</li>
+<li>In the map display, switch to &#x201C;3D view&#x201D; &#x2013; in the upper right corner</li>
+<li>In wxNVIZ&apos;s &#x201C;Data&#x201D; tab, load &#x201C;flowacc&#x201D; as &#x201C;Surface attrib./Color&#x201D;</li>
+<li>Increase the shown map resolution in &#x201C;Fine mode&#x201D;: reduce the value<h1 id="missing-imagebroken-image">MISSING IMAGE/BROKEN IMAGE!</h1>
+</li>
+</ul>
+<hr>
+<h3 id="raster-capabilities-in-grass-gis">Raster capabilities in GRASS GIS</h3>
+<p><strong>Example raster module groups</strong></p>
+<ul>
+<li>resampling</li>
+<li>Reprojection/georectification</li>
+<li>map calculator</li>
+<li>Terrain analysis</li>
+<li>Hydrologic modeling</li>
+<li>Reports and statistics</li>
+</ul>
+<p>Raster maps: DEMs, land cover, climatic maps &#x2026;</p>
+<p>Imagery maps: Landsat, MODIS, SPOT, QuickBird &#x2026;</p>
+<hr>
+<h3 id="raster-data-analysis-further-methods">Raster data analysis: further methods</h3>
+<ul>
+<li>Additional DEM analysis modules:<ul>
+<li>depression areas can be filled with <strong>r.fill.dir</strong></li>
+<li>flowlines can be calculated with <strong>r.flow</strong></li>
+<li>trace a flow through a DEM: <strong>r.drain</strong></li>
+<li>watershed analysis can be done with <strong>r.watershed</strong> and <strong>r.terraflow</strong></li>
+<li>cost surfaces: <strong>r.cost</strong>, <strong>r.walk</strong></li>
+</ul>
+</li>
+<li>Energy:<ul>
+<li>cast shadows, astronomical calculations of sun position: <strong>r.sunmask</strong></li>
+<li>energy budget: <strong>r.sun</strong></li>
+</ul>
+</li>
+<li>Line of sight:<ul>
+<li>viewsheds can be generated with: <strong>r.viewshed</strong></li>
+</ul>
+</li>
+<li>Interpolation methods<ul>
+<li>2D inverse distance weighted: <strong>v.surf.idw</strong></li>
+<li>2D from contour lines: <strong>r.surf.contour</strong></li>
+<li>2D bilinear: <strong>r.resamp.interp</strong></li>
+<li>2D regularized splines with tension (with cross validation): <strong>v.surf.rst</strong></li>
+<li>3D regularized splines with tension (with cross validation): <strong>v.vol.rst</strong></li>
+<li>2D/3D kernel densities: <strong>v.kernel</strong></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://grass.osgeo.org/grass74/manuals/index.html" target="_blank">&#x2026; and much more!</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="grassgis7_intro.html" class="navigation navigation-prev " aria-label="Previous page: 3) GRASS GIS 7 intro">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="vector_data.html" class="navigation navigation-next " aria-label="Next page: 5) GRASS GIS 7 vector data">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4) GRASS GIS 7 raster intro","level":"1.6","depth":1,"next":{"title":"5) GRASS GIS 7 vector data","level":"1.7","depth":1,"path":"vector_data.md","ref":"vector_data.md","articles":[]},"previous":{"title":"3) GRASS GIS 7 intro","level":"1.5","depth":1,"path":"grassgis7_intro.md","ref":"grassgis7_intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"raster_intro.md","mtime":"2018-03-12T10:55:31.186Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

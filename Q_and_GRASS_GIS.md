@@ -11,7 +11,7 @@ ___
 * Download of related course data
 * Using GRASS GIS in QGIS through “Processing”
 ___
-##Preparation
+##<span style="color:red">*Preparation*</span>
 ####Starting OSGeoLive
 
 [OSGeo-Live](http://download.osgeo.org/livedvd) ISO available
@@ -56,10 +56,11 @@ Authentication:
 <img style="float: right;" src="image/osgeomenu.png" width="300"/>
 Missing language?
 Set it via the **main applications menu**
-
-	Preferences
+```
+Preferences
 		> Language Support
 			> Install/Remove languages
+```
 ___
 
 ###Web Download of course data sets
@@ -68,8 +69,8 @@ Please create a “_gis_data_” directory for the course data:
 	cd $HOME
 	mkdir gis_data
 
-Download data from: [mundialis](https://www.mundialis.de/workshops/osgeo_ireland2017/)
-_WORKSHOP NAME BEU MUNDIALIS.DE noch ändern_!!!!
+Download data from: [mundialis.de](https://www.mundialis.de/workshops/osgeo_ireland2017/)
+_WORKSHOP NAME BEI MUNDIALIS.DE noch ändern_!!!!
 
 	folder: north_carolina/ 
 	- nc_zipcodes_wake_SHP.zip 		308 KB
@@ -78,14 +79,17 @@ _WORKSHOP NAME BEU MUNDIALIS.DE noch ändern_!!!!
 
 	  [...]
 
-Save these **3 files** your computer into the new “gis_data” directory and unpack them.
 <img style="float: right;" src="image/wiki_NC.png" width="250"/>
+Save these **3 files** your computer into the new “gis_data” directory and unpack them.
+
 The other files we'll download later.
 
 The maps are located in [North Carolina](https://en.wikipedia.org/wiki/North_Carolina), USA.
 ___
 ###OSGeo-live: North Carolina sample data set
 **Duplikatseite Nr. 8?**
+
+___
 ###Unpacking the course data set
 Unpacking of the  nc_zipcodes_wake_SHP.zip|.tar.gz 
 (ZIP codes map of Wake county in North Carolina)
@@ -109,7 +113,7 @@ Unpacking of the  nc_zipcodes_wake_SHP.zip|.tar.gz
 Note: avoid white space in the path as well as non-ASCII characters (it may work, though)
 
 ___
-##QGIS: “GRASS Toolbox” versus “Processing”
+##<span style="color:red">QGIS</span>: “GRASS Toolbox” versus “Processing”
 
 Two ways of using GRASS GIS from QGIS
 
@@ -130,7 +134,7 @@ So, which one? We will now use “Processing”!
 
 **Start QGIS** from “Desktop GIS” in OSGeoLive
 ___
-##QGIS-Processing
+##<span style="color:red">QGIS-Processing</span>
 ####Using QGIS and Processing
 ![qgis](image/qgis_proc.png)
 

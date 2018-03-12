@@ -154,6 +154,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="raster_intro.html">
+            
+                <a href="raster_intro.html">
+            
+                    
+                    4) GRASS GIS 7 raster intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="vector_data.html">
+            
+                <a href="vector_data.html">
+            
+                    
+                    5) GRASS GIS 7 vector data
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -214,7 +240,7 @@
 <li>Using GRASS GIS in QGIS through &#x201C;Processing&#x201D;</li>
 </ul>
 <hr>
-<h2 id="preparation">Preparation</h2>
+<h2 id="preparation"><span style="color:red"><em>Preparation</em></span></h2>
 <h4 id="starting-osgeolive">Starting OSGeoLive</h4>
 <p><a href="http://download.osgeo.org/livedvd" target="_blank">OSGeo-Live</a> ISO available</p>
 <p>Copy to DVD or USB flash drive, then boot from flash drive;
@@ -241,28 +267,29 @@ For the <strong>menus</strong>: Logout &gt; Change language in top menu &gt; Log
 Missing language?
 Set it via the <strong>main applications menu</strong></p>
 <pre><code>Preferences
-    &gt; Language Support
-        &gt; Install/Remove languages
+        &gt; Language Support
+            &gt; Install/Remove languages
 </code></pre><hr>
 <h3 id="web-download-of-course-data-sets">Web Download of course data sets</h3>
 <p>Please create a &#x201C;<em>gis_data</em>&#x201D; directory for the course data:</p>
 <pre><code>cd $HOME
 mkdir gis_data
-</code></pre><p>Download data from: <a href="https://www.mundialis.de/workshops/osgeo_ireland2017/" target="_blank">mundialis</a>
-<em>WORKSHOP NAME BEU MUNDIALIS.DE noch &#xE4;ndern</em>!!!!</p>
+</code></pre><p>Download data from: <a href="https://www.mundialis.de/workshops/osgeo_ireland2017/" target="_blank">mundialis.de</a>
+<em>WORKSHOP NAME BEI MUNDIALIS.DE noch &#xE4;ndern</em>!!!!</p>
 <pre><code>folder: north_carolina/ 
 - nc_zipcodes_wake_SHP.zip         308 KB
 - elev_ncstate_500m_tif.zip      1.8 MB
 - elev_lid792_1m_tif.zip            1.7 MB
 
   [...]
-</code></pre><p>Save these <strong>3 files</strong> your computer into the new &#x201C;gis_data&#x201D; directory and unpack them.
-<img style="float: right;" src="image/wiki_NC.png" width="250">
-The other files we&apos;ll download later.</p>
+</code></pre><p><img style="float: right;" src="image/wiki_NC.png" width="250">
+Save these <strong>3 files</strong> your computer into the new &#x201C;gis_data&#x201D; directory and unpack them.</p>
+<p>The other files we&apos;ll download later.</p>
 <p>The maps are located in <a href="https://en.wikipedia.org/wiki/North_Carolina" target="_blank">North Carolina</a>, USA.</p>
 <hr>
 <h3 id="osgeo-live-north-carolina-sample-data-set">OSGeo-live: North Carolina sample data set</h3>
 <p><strong>Duplikatseite Nr. 8?</strong></p>
+<hr>
 <h3 id="unpacking-the-course-data-set">Unpacking the course data set</h3>
 <p>Unpacking of the  nc_zipcodes_wake_SHP.zip|.tar.gz 
 (ZIP codes map of Wake county in North Carolina)</p>
@@ -286,7 +313,7 @@ tar xvfz /path/to/nc_zipcodes_wake_SHP.tar.gz
 Note: avoid white space in the path as well as non-ASCII characters (it may work, though)</li>
 </ul>
 <hr>
-<h2 id="qgis-grass-toolbox-versus-processing">QGIS: &#x201C;GRASS Toolbox&#x201D; versus &#x201C;Processing&#x201D;</h2>
+<h2 id="qgis-grass-toolbox-versus-processing"><span style="color:red">QGIS</span>: &#x201C;GRASS Toolbox&#x201D; versus &#x201C;Processing&#x201D;</h2>
 <p>Two ways of using GRASS GIS from QGIS</p>
 <p><strong>GRASS Toolbox</strong></p>
 <ul>
@@ -303,7 +330,7 @@ Note: avoid white space in the path as well as non-ASCII characters (it may work
 <p>So, which one? We will now use &#x201C;Processing&#x201D;!</p>
 <p><strong>Start QGIS</strong> from &#x201C;Desktop GIS&#x201D; in OSGeoLive</p>
 <hr>
-<h2 id="qgis-processing">QGIS-Processing</h2>
+<h2 id="qgis-processing"><span style="color:red">QGIS-Processing</span></h2>
 <h4 id="using-qgis-and-processing">Using QGIS and Processing</h4>
 <p><img src="image/qgis_proc.png" alt="qgis"></p>
 <h3 id="vector-exercise">Vector exercise</h3>
@@ -369,7 +396,7 @@ Note: avoid white space in the path as well as non-ASCII characters (it may work
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2) GRASS GIS Software first steps","level":"1.4","depth":1,"next":{"title":"3) GRASS GIS 7 intro","level":"1.5","depth":1,"path":"grassgis7_intro.md","ref":"grassgis7_intro.md","articles":[]},"previous":{"title":"1) Introduction","level":"1.3","depth":1,"path":"Intro.md","ref":"Intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Q_and_GRASS_GIS.md","mtime":"2018-03-05T11:15:11.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-05T12:10:55.246Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2) GRASS GIS Software first steps","level":"1.4","depth":1,"next":{"title":"3) GRASS GIS 7 intro","level":"1.5","depth":1,"path":"grassgis7_intro.md","ref":"grassgis7_intro.md","articles":[]},"previous":{"title":"1) Introduction","level":"1.3","depth":1,"path":"Intro.md","ref":"Intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Q_and_GRASS_GIS.md","mtime":"2018-03-12T10:33:45.715Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T07:22:21.992Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
